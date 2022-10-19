@@ -52,3 +52,12 @@ export const TextJoinRegister= styled.div`
     color: #52B6FF;
     margin-top:25px;
 `
+
+
+export const PageLogin = styled.div`
+display:flex;
+flex-direction:column;
+align-items:center;
+padding-top:70px;
+padding-bottom: 101px;
+`

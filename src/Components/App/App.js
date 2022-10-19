@@ -1,7 +1,8 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import LoginPage from "../LoginPage/LoginPage";
-import styled from "styled-components";
 import RegisterPage from "../RegisterPage/RegisterPage";
+import GlobalStyle from "../Style/GlobalStyle";
+import TodayPage from "../TodayPage/TodayPage";
 
 
 
@@ -10,20 +11,15 @@ export default function App() {
 
     return (
         <BrowserRouter>
-            <Pages>
+            <GlobalStyle />
+
             <Routes>
-                <Route path="/" element={<LoginPage/>}/>
-                <Route path="/cadastro" element = {<RegisterPage/>}/>
+                <Route path="/" element={<LoginPage />} />
+                <Route path="/cadastro" element={<RegisterPage />} />
+                <Route path="/hoje" element={<TodayPage />} />
             </Routes>
 
-            </Pages>
+
         </BrowserRouter>
     );
 }
-
-const Pages = styled.div`
-display:flex;
-flex-direction:column;
-align-items:center;
-padding-top:68px;
-`
