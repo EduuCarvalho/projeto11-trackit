@@ -1,8 +1,8 @@
 import styled from "styled-components"
-export const Input= styled.form`
+export const Form= styled.form`
 display:flex;
 flex-direction:column;
-input {
+    input {
     width: 303px;
     height: 45px;
     font-family: 'Lexend Deca';
