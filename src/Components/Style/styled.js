@@ -51,6 +51,7 @@ export const TextJoinRegister= styled.div`
     text-decoration-line: underline;
     color: #52B6FF;
     margin-top:25px;
+    cursor:pointer;
 `
 
 
