@@ -1,11 +1,18 @@
 import styled from "styled-components"
+import { useAuth } from "../../Context/authToken";
+import { useImg } from "../../Context/imgProvider";
+
 
 export default function Header () {
+
+    const {userToken} = useAuth();
+    const {userImg} = useImg();
+    console.log(userImg)
 
     return (
         <HeaderContainer>
             <p>TrackIt</p>
-            <div>FOTO</div>
+            <div><img src={userImg} alt="user-Image"/></div>
             
         </HeaderContainer>
     )
@@ -30,14 +37,19 @@ const HeaderContainer = styled.div`
     margin-left:18px;
     }
     div{
+        
         display:flex;
         justify-content:center;
         align-items:center;
-        width:51px;
-        height:51px;
-        background-color:red;
         margin-right:18px;
         border-radius: 98.5px;
+
+        img{
+        width:51px;
+        height:51px;
+        margin-right:18px;
+        border-radius: 98.5px;
+        }
     }
 
 

@@ -1,12 +1,14 @@
 import styled from "styled-components"
+import { Link } from "react-router-dom"
+
 
 export default function Footer() {
 
     return (
         <FooterContainer>
-            <p>Hábitos</p>
-            <div>Hoje</div>
-            <p>Histórico</p>
+            <Link to={"/habitos"}><p>Hábitos</p></Link>
+            <Link to={"/hoje"}><div>Hoje</div></Link>
+            <Link to={"/historico"} ><p>Histórico</p></Link>
         </FooterContainer>
     )
 }
@@ -29,6 +31,7 @@ font-weight: 400;
 font-size: 17.976px;
 line-height: 22px;
 color: #52B6FF;
+
 }
 
 div {

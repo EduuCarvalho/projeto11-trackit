@@ -5,11 +5,12 @@ import axios from "axios"
 import { Link, useNavigate } from "react-router-dom"
 import gifLogin from "../../Assets/img/login.gif"
 import { useAuth } from "../../Context/authToken";
+import {useImg} from    "../../Context/imgProvider"
 
 export default function LoginPage () {
 
     const {userToken, setUserToken} = useAuth();
-    const {userImg, setUserImg} = useAuth();
+    const {userImg, setUserImg} = useImg();
 
     const [logInObj, setLogInObj] = useState ({
         email: "",
@@ -44,7 +45,7 @@ export default function LoginPage () {
                     }
                 })
                 setUserImg(
-                   
+                   res.data.image
                 )
              })
              .catch()

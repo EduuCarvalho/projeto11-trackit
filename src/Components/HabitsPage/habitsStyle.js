@@ -54,6 +54,7 @@ export const AddHabitContainer = styled.div`
         height:180px;
         background-color:#FFFFFF;
         border-radius: 5px;
+        
 
             input{
                 width:80vw;
