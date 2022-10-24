@@ -55,9 +55,11 @@ export const ToDoList = styled.div`
         }
             p{
             font-size: 12.976px;
-            max-width:150px;
+            width:150px;
             line-height: 20px;
+            background-color:#111111
             }
+           
         }
         
 `
@@ -74,4 +76,5 @@ export const CheckButton = styled.button`
 
 `;
 
-//${props=>isDone === false? "#EBEBEB": "#8FC549"};
+
+

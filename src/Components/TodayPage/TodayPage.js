@@ -14,7 +14,7 @@ export default function TodayPage () {
 
     const [listHabit,setListHabit] = useState([]);
     const { userToken } = useAuth();
-
+console.log(listHabit)
     
     useEffect (()=>{
         getHabits()
@@ -26,12 +26,22 @@ export default function TodayPage () {
              .catch()
     }
     
-    function checkHabit (index) {
-        axios.post(`https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit/habits/${index}/check`,{},userToken)
-             .then()
-             .catch()   
+    function checkHabit (id,done) {
+        if(done===false){
+        axios.post(`https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit/habits/${id}/check`,{},userToken)
+             .then( getHabits())
+             .catch((res)=>res.response.data)   
+    }else{
+        uncheckHabit(id)
+    }
+    }
+    function uncheckHabit (id){
+        axios.post(`https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit/habits/${id}/uncheck`,{},userToken)
+        .then(getHabits())
+        .catch((res)=>res.response.data)   
     }
 
+    
  
     return (
         <>
@@ -45,9 +55,9 @@ export default function TodayPage () {
             <ToDoList key={index}>
                  <div>
                      <h1>{i.name}</h1>
-                     <p>Sequencia atual {i.currentSequence} dias Seu recorde: {i.highestSequence} dias</p>
+                     <p>Sequencia atual: {i.currentSequence} dias  Seu recorde: {i.highestSequence} dias</p>
                  </div>
-                 <CheckButton isDone={i.done}  > <img src={checkImg} alt="check-button"/></CheckButton>
+                 <CheckButton isDone={i.done} onClick={()=>checkHabit(i.id,i.done)} > <img src={checkImg} alt="check-button"/></CheckButton>
              </ToDoList>)}</>
                
                :""}
