@@ -78,20 +78,20 @@ export const WeekDaysContainer = styled.div`
     width:83vw;
     margin-top:10px;
        
-            button {
+`
+export const Daybutton = styled.button`
                 width:30px;
                 height:30px;
                 border: 1px solid #D5D5D5;
                 border-radius: 5px;
-                background: #FFFFFF;
+                background:${props=>props.dayClicked.includes(props.index)? "#DBDBDB":"#FFFFFF"};
                 margin-right:4px;
                 font-style: normal;
                 font-weight: 400;
                 font-size: 19.976px;
                 line-height: 25px;
-                color: #DBDBDB;
+                color: ${props=>props.dayClicked.includes(props.index)? "#FFFFFF":"#DBDBDB"};
                 font-family: 'Lexend Deca';
-            }
 `
 
 export const ButtonCancelSaveContainer = styled.div`

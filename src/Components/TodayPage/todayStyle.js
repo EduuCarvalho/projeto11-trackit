@@ -42,6 +42,7 @@ export const ToDoList = styled.div`
     font-style: normal;
     font-weight: 400;
     color: #666666;
+    margin-top:10px;
         div {
             display:flex;
             flex-direction:column;
@@ -58,15 +59,19 @@ export const ToDoList = styled.div`
             line-height: 20px;
             }
         }
-        button{
+        
+`
+export const CheckButton = styled.button`
             display:flex;
             align-items:center;
             justify-content:center;
             width:69px;
             height:69px;
             margin-right:12.5px;
-            background: #EBEBEB;
+            background: ${props=>props.isDone === false? "#EBEBEB": "#8FC549"};
             border: 1px solid #E7E7E7;
             border-radius: 5px;
-        }
-`
+
+`;
+
+//${props=>isDone === false? "#EBEBEB": "#8FC549"};

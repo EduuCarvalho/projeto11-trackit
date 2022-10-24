@@ -38,7 +38,7 @@ export default function LoginPage () {
         e.preventDefault()
         axios.post(`https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit/auth/login`,logInObj)
              .then((res)=> {
-                navigate("/hoje") 
+                
                 setUserToken(
                 {headers: {
                         "Authorization": `Bearer ${res.data.token}`
@@ -47,6 +47,7 @@ export default function LoginPage () {
                 setUserImg(
                    res.data.image
                 )
+                navigate("/hoje") 
              })
              .catch()
             console.log("Token",userToken)

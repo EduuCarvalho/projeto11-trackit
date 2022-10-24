@@ -1,18 +1,18 @@
 import styled from "styled-components"
-import { useAuth } from "../../Context/authToken";
+
 import { useImg } from "../../Context/imgProvider";
 
 
 export default function Header () {
 
-    const {userToken} = useAuth();
+    
     const {userImg} = useImg();
     console.log(userImg)
 
     return (
         <HeaderContainer>
             <p>TrackIt</p>
-            <div><img src={userImg} alt="user-Image"/></div>
+            <div><img src={userImg} alt="userPhoto"/></div>
             
         </HeaderContainer>
     )
@@ -27,6 +27,7 @@ const HeaderContainer = styled.div`
     align-items:center;
     position:fixed;
     top:0;
+    z-index:2;
     
     p{
     font-family: 'Playball';
