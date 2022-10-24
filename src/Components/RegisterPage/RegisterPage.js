@@ -3,7 +3,7 @@ import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import TrackImg from "../../Assets/img/TrackIt.png"
 import {Form, Logo, ButtonJoinRegister,TextJoinRegister,PageLogin } from "../Style/styled"
-
+import { Link } from "react-router-dom"
 
 
 export default function RegisterPage() {
@@ -39,7 +39,7 @@ export default function RegisterPage() {
             <input typle="text" placeholder="nome" name="name" value={registerObj.name} onChange={handleRegister} required></input>
             <input typle="url" placeholder="foto" name="image" value={registerObj.image} onChange={handleRegister} required></input>
             <ButtonJoinRegister>Cadastrar</ButtonJoinRegister>
-            <TextJoinRegister>Já tem uma conta? Faça login!</TextJoinRegister>
+            <Link to={"/"}><TextJoinRegister>Já tem uma conta? Faça login!</TextJoinRegister></Link>
         </Form>
         </PageLogin>
     )

@@ -11,9 +11,15 @@ console.log(habitList)
     const weekDays = ["D", "S", "T", "Q", "Q", "S", "S"];
 
     function deleteHabit (id) {
+        const delet = window.confirm("Deseja deletar?");
 
-        axios.delete(`https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit/habits/${id}`,userToken)
-             .then(getHabits())   
+        console.log(delet)
+
+        if(delet ){
+            axios.delete(`https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit/habits/${id}`,userToken)
+            .then(getHabits()) 
+          
+        }
     }
 
 
@@ -40,7 +46,7 @@ const ShowHabitsContainer = styled.div`
         display:flex;
         flex-direction:column;
         align-items:flex-start;
-        width:90vw;
+        width:84vw;
         height:91px;
         background-color:#FFFFFF;
         border-radius: 5px;

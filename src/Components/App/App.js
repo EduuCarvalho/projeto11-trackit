@@ -8,19 +8,8 @@ import RegisterPage from "../RegisterPage/RegisterPage";
 import GlobalStyle from "../Style/GlobalStyle";
 import TodayPage from "../TodayPage/TodayPage";
 import React from "react";
-import { useAuth } from "../../Context/authToken";
-import { useImg } from "../../Context/imgProvider";
-
-
-
-
 
 export default function App() {
-
-const {userToken} = useAuth();
- console.log(userToken)
- const {userImg} = useImg();
- console.log(userImg)
 
     return (
         <BrowserRouter>

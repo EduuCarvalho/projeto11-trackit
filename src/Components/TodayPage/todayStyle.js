@@ -57,8 +57,16 @@ export const ToDoList = styled.div`
             font-size: 12.976px;
             width:150px;
             line-height: 20px;
-            background-color:#111111
+           
             }
+            b{
+                color:${props=>props.isDone?"#8FC549":"#666666"}
+                //;
+            }
+            p:last-child b{
+                color:${props=>props.compareCurrentHighest && props.isDone?"#8FC549":"#666666"}
+            }
+           
            
         }
         

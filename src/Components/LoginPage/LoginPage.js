@@ -9,8 +9,8 @@ import {useImg} from    "../../Context/imgProvider"
 
 export default function LoginPage () {
 
-    const {userToken, setUserToken} = useAuth();
-    const {userImg, setUserImg} = useImg();
+    const {setUserToken} = useAuth();
+    const {setUserImg} = useImg();
 
     const [logInObj, setLogInObj] = useState ({
         email: "",
@@ -50,8 +50,7 @@ export default function LoginPage () {
                 navigate("/hoje") 
              })
              .catch()
-            console.log("Token",userToken)
-            console.log("URL foto",userImg)
+            
     }
 
     

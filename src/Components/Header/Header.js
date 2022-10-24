@@ -7,7 +7,7 @@ export default function Header () {
 
     
     const {userImg} = useImg();
-    console.log(userImg)
+
 
     return (
         <HeaderContainer>
